@@ -72,9 +72,6 @@ colorSwatches.forEach((swatch) => {
     // Add/remove from selectedColors Set
     if (selectedColors.has(color)) selectedColors.delete(color);
     else selectedColors.add(color);
-
-    // Store the last selected color in localStorage
-    localStorage.setItem("selectedColor", color);
   });
 });
 
@@ -101,15 +98,5 @@ function showTab(id) {
 window.onclick = function (e) {
   if (e.target.classList.contains("modal")) {
     e.target.style.display = "none";
-  }
-};
-
-// On page load, restore selected color from localStorage (if any)
-window.onload = () => {
-  const storedColor = localStorage.getItem("selectedColor");
-  if (storedColor) {
-    document.querySelectorAll(".color-swatch").forEach((s) => {
-      if (s.dataset.color === storedColor) s.classList.add("selected");
-    });
   }
 };
