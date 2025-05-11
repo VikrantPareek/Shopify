@@ -1,0 +1,272 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: rgb(247, 247, 247);
+}
+
+.container {
+  max-width: 100%;
+  margin: auto;
+  padding: 1.25rem;
+}
+
+h1,
+h2,
+h3 {
+  margin-bottom: 0.625rem;
+}
+
+/* Product Gallery */
+.product-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+}
+
+.main-image-container {
+  flex: 1;
+  position: relative;
+}
+
+.main-image {
+  height: 28.125rem;
+  border: 0.0625rem solid rgb(204, 204, 204);
+  transition: transform 0.3s ease;
+}
+
+.main-image:hover {
+  transform: scale(1.05);
+}
+
+.thumbnail-list {
+  display: flex;
+  gap: 0.625rem;
+  overflow-x: auto;
+  width: 31.25rem;
+  height: 10.625rem;
+}
+
+.thumbnail-list::-webkit-scrollbar {
+  height: 0.5rem;
+}
+
+.thumbnail-list::-webkit-scrollbar-track {
+  background: rgb(223, 222, 222);
+  border-radius: 0.625rem;
+}
+
+.thumbnail-list::-webkit-scrollbar-thumb {
+  background-color: rgb(153, 153, 153);
+  border-radius: 0.625rem;
+}
+
+.thumbnail-list::-webkit-scrollbar-thumb:hover {
+  background-color: rgb(102, 102, 102);
+}
+
+.thumbnail-list img {
+  height: 9.375rem;
+  object-fit: cover;
+  cursor: pointer;
+  border: 0.125rem solid transparent;
+}
+
+.thumbnail-list img:hover {
+  border-color: rgb(0, 0, 0);
+}
+
+/* Variants */
+.options {
+  margin-top: 1.25rem;
+}
+
+.color-swatch {
+  width: 1.875rem;
+  height: 1.875rem;
+  display: inline-block;
+  border-radius: 50%;
+  border: 0.0625rem solid rgb(204, 204, 204);
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.color-swatch.selected {
+  outline: 0.1875rem solid rgb(0, 0, 0);
+}
+
+select {
+  padding: 0.3125rem;
+  margin-top: 0.625rem;
+}
+
+/* Buttons */
+button {
+  padding: 0.5rem 1rem;
+  margin-top: 0.625rem;
+  cursor: pointer;
+}
+
+/* Modal Styles */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: rgb(255, 255, 255);
+  padding: 1.25rem;
+  border-radius: 0.5rem;
+  width: 90%;
+  max-width: 37.5rem;
+  position: relative;
+  text-align: center;
+}
+
+.modal-content table,
+th,
+td {
+  border: 0.0625rem solid rgb(0, 0, 0);
+}
+
+.modal-content table {
+  width: 100%;
+}
+
+.modal .close {
+  position: absolute;
+  top: 0.625rem;
+  right: 1.25rem;
+  font-size: 3rem;
+  cursor: pointer;
+}
+
+#compareSwatches {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  justify-content: center;
+  margin-top: 1.25rem;
+}
+
+#compareSwatches div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Recommendation Carousel */
+.recommendation-carousel {
+  display: flex;
+  gap: 1.875rem;
+  padding: 0.625rem 0;
+  width: 100%;
+  height: 30rem;
+}
+
+.product-card {
+  flex: 0 0 auto;
+  background: rgb(255, 255, 255);
+  padding: 0.625rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.125rem 0.3125rem rgba(0, 0, 0, 0.1);
+}
+
+.recommended img {
+  height: 18.75rem;
+  width: 15.625rem;
+  margin-bottom: 0.3125rem;
+}
+
+.recommended p {
+  margin: 0.0625rem auto 0.0625rem auto;
+  text-align: center;
+}
+
+.recommended button {
+  margin: 0.3125rem 0 0.125rem 4.375rem;
+}
+
+.bundle,
+.tabs,
+.related-products {
+  margin-top: 1.875rem;
+}
+
+.tab-buttons button {
+  margin-right: 0.625rem;
+}
+
+.tab-content {
+  display: none;
+  margin-top: 0.625rem;
+}
+
+.tab-content.active {
+  display: block;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.related-grid {
+  display: flex;
+  gap: 1.875rem;
+  display: flex;
+  gap: 0.625rem;
+  width: 100%;
+  height: 23rem;
+}
+
+.related-grid img {
+  height: 18.75rem;
+  width: 15.625rem;
+}
+
+@media (max-width: 48rem) {
+  .product-gallery {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 36rem) {
+  .thumbnail-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.625rem;
+    overflow: auto;
+  }
+}
+
+@media (max-width: 92rem) {
+  .recommendation-carousel {
+    flex-wrap: wrap;
+    height: auto;
+  }
+}
+
+@media (max-width: 92rem) {
+  .related-grid {
+    flex-wrap: wrap;
+    height: auto;
+  }
+}
