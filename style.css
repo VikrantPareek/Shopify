@@ -80,7 +80,7 @@ h3 {
   border-color: rgb(0, 0, 0);
 }
 
-/* Variants */
+/* Compare Color */
 .options {
   margin-top: 1.25rem;
 }
@@ -99,6 +99,7 @@ h3 {
   outline: 0.1875rem solid rgb(0, 0, 0);
 }
 
+/* Dropdown */
 select {
   padding: 0.3125rem;
   margin-top: 0.625rem;
@@ -135,6 +136,7 @@ button {
   text-align: center;
 }
 
+/* Table */
 .modal-content table,
 th,
 td {
@@ -228,6 +230,7 @@ td {
   }
 }
 
+/* Related Products */
 .related-grid {
   display: flex;
   gap: 1.875rem;
@@ -242,6 +245,7 @@ td {
   width: 15.625rem;
 }
 
+/* For Responsiveness */
 @media (max-width: 48rem) {
   .product-gallery {
     flex-direction: column;
